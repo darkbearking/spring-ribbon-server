@@ -1,0 +1,14 @@
+#下面的配置中：雖然這個配置的profiles的名字是slaveA，但是它並不是服務名，它只是配置文件的名字。
+#它真正的訪問地址，http://slave1:8761/eureka中的slave1，來源於hosts配置文件。
+#簡單來說，profiles名字僅僅是個名字而已。
+server:
+  port: 8761
+spring: 
+  application:
+    name: spring-ribbon-server
+eureka:
+  client: 
+    #自己是注册中心，是否要将自己注册到注册中心去,集群的时候需要设置为true
+    register-with-eureka: true
+    #自己是注册中心，不需要去检索服务信息
+    fetch-registry: false
